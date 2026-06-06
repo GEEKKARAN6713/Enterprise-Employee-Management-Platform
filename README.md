@@ -2,9 +2,9 @@
 
 ![Java](https://img.shields.io/badge/Java-21-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-green)
-![MySQL](https://img.shields.io/badge/MySQL-9-blue)
-![Security](https://img.shields.io/badge/Spring_Security-6-success)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+![MySQL](https://img.shields.io/badge/MySQL-8-blue)
+![Spring Security](https://img.shields.io/badge/Spring_Security-6-success)
+![Maven](https://img.shields.io/badge/Maven-3.9-red)
 
 A modern Enterprise Employee Management Platform built using Spring Boot, Spring Security, JWT Authentication, Thymeleaf, MySQL, Flyway, and Role-Based Access Control (RBAC).
 
@@ -12,34 +12,34 @@ A modern Enterprise Employee Management Platform built using Spring Boot, Spring
 
 # Overview
 
-The Enterprise Employee Management Platform is a full-stack web application designed to streamline employee administration within an organization.
+The Enterprise Employee Management Platform is a secure full-stack web application designed to manage employees, departments, leave requests, tasks, and audit logs within an organization.
 
-The platform provides secure authentication, employee profile management, department management, leave request processing, task assignment, and audit logging while following enterprise-grade architecture and security practices.
+The platform follows enterprise-grade architecture and security practices using Spring Boot 3, Spring Security, JWT Authentication, MySQL, and Flyway database migrations.
 
 ---
 
 # Features
 
-## Authentication & Authorization
+## Authentication & Security
 
-* Secure Login System
-* JWT Authentication
 * Spring Security 6
+* JWT Authentication
+* Role-Based Access Control (RBAC)
 * BCrypt Password Encryption
-* Role-Based Access Control (ADMIN, MANAGER, EMPLOYEE)
+* Secure Session Management
 
 ## Employee Management
 
-* Create Employees
-* Update Employee Information
-* View Employee Profiles
+* Employee Profile Management
 * Employee Directory
+* Manager Assignment
+* Department Assignment
 
 ## Department Management
 
-* Create Departments
-* Manage Departments
-* Employee Department Assignment
+* Department Creation
+* Department Listing
+* Department Organization
 
 ## Leave Management
 
@@ -49,35 +49,35 @@ The platform provides secure authentication, employee profile management, depart
 
 ## Task Management
 
-* Task Creation
 * Task Assignment
 * Task Tracking
 * Due Date Monitoring
+* Status Management
 
 ## Audit Logging
 
 * User Activity Tracking
-* CRUD Operation Monitoring
-* Login Activity Recording
-* System Audit Trail
+* CRUD Audit Trail
+* System Monitoring
+* Security Auditing
 
 ---
 
 # Technology Stack
 
-| Layer              | Technology                  |
-| ------------------ | --------------------------- |
-| Language           | Java 21                     |
-| Backend            | Spring Boot 3.5             |
-| Security           | Spring Security 6           |
-| Authentication     | JWT                         |
-| Frontend           | Thymeleaf                   |
-| UI Framework       | Bootstrap 5                 |
-| Database           | MySQL                       |
-| ORM                | Spring Data JPA / Hibernate |
-| Database Migration | Flyway                      |
-| Build Tool         | Maven                       |
-| API Documentation  | Swagger OpenAPI             |
+| Layer          | Technology        |
+| -------------- | ----------------- |
+| Language       | Java 21           |
+| Backend        | Spring Boot 3.5   |
+| Security       | Spring Security 6 |
+| Authentication | JWT               |
+| Frontend       | Thymeleaf         |
+| Styling        | Bootstrap 5       |
+| Database       | MySQL             |
+| ORM            | Hibernate / JPA   |
+| Migration      | Flyway            |
+| Build Tool     | Maven             |
+| Documentation  | Swagger OpenAPI   |
 
 ---
 
@@ -85,49 +85,49 @@ The platform provides secure authentication, employee profile management, depart
 
 ## Login Page
 
-![Login](screenshots/login.png)
+![Login](Screenshots/login.png)
 
 ## Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](Screenshots/dashboard.png)
 
 ## Employees
 
-![Employees](screenshots/employees.png)
+![Employees](Screenshots/employees.png)
 
 ## Departments
 
-![Departments](screenshots/departments.png)
+![Departments](Screenshots/departments.png)
 
 ## Leave Management
 
-![Leaves](screenshots/leaves.png)
+![Leaves](Screenshots/leaves.png)
 
 ## Task Management
 
-![Tasks](screenshots/tasks.png)
+![Tasks](Screenshots/tasks.png)
 
 ## Audit Logs
 
-![Audit Logs](screenshots/audit.png)
+![Audit Logs](Screenshots/audit.png)
 
 ---
 
 # System Architecture
 
-![Architecture](screenshots/architecture.png)
+![Architecture](Screenshots/architecture.png)
 
 ---
 
 # Database ER Diagram
 
-![ER Diagram](screenshots/er-diagram.png)
+![ER Diagram](Screenshots/er-diagram.png)
 
 ---
 
 # API Documentation
 
-![Swagger UI](screenshots/swagger.png)
+![Swagger UI](Screenshots/swagger.png)
 
 ---
 
@@ -142,8 +142,8 @@ src
 │   │       ├── controller
 │   │       ├── service
 │   │       ├── repository
-│   │       ├── mapper
 │   │       ├── security
+│   │       ├── mapper
 │   │       ├── domain
 │   │       ├── dto
 │   │       └── exception
@@ -162,7 +162,7 @@ src
 
 # Database Design
 
-The system consists of the following entities:
+The platform is built around the following entities:
 
 * Users
 * Roles
@@ -173,50 +173,51 @@ The system consists of the following entities:
 * Tasks
 * Audit Logs
 
-These entities are connected using relational database design principles and managed through JPA/Hibernate.
+The database schema is managed using Flyway migrations and Hibernate ORM.
 
 ---
 
 # Security Features
 
 * JWT Token Authentication
-* Spring Security Filter Chain
-* Password Encryption using BCrypt
-* Role-Based Access Control (RBAC)
-* Endpoint Protection
-* Authentication & Authorization Layers
+* Spring Security Filter Chains
+* Password Encryption with BCrypt
+* Role-Based Access Control
+* Secure REST APIs
+* Protected Administrative Endpoints
 
 ---
 
-# Admin Dashboard Modules
+# Modules
 
 ### Dashboard
 
-* Employee Statistics
+* Employee Overview
 * Department Overview
-* Leave Summary
-* Task Summary
+* Leave Statistics
+* Task Monitoring
 
 ### Employees
 
-* Employee Listing
-* Employee Information
+* Employee Records
+* Profile Management
 
 ### Departments
 
-* Department Management
+* Department Administration
 
 ### Leaves
 
-* Leave Request Tracking
+* Leave Request Processing
 
 ### Tasks
 
-* Task Assignment & Monitoring
+* Task Assignment & Tracking
 
 ### Audit
 
-* System Activity Monitoring
+* Activity Monitoring
+* Security Logs
 
 ---
 
@@ -225,22 +226,22 @@ These entities are connected using relational database design principles and man
 ## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/employee-management-platform.git
+git clone https://github.com/GEEKKARAN6713/Enterprise-Employee-Management-Platform.git
 ```
 
 ## Navigate to Project
 
 ```bash
-cd employee-management-platform
+cd Enterprise-Employee-Management-Platform
 ```
 
-## Configure Database
-
-Create MySQL database:
+## Create Database
 
 ```sql
 CREATE DATABASE emp_mgmt;
 ```
+
+## Configure Database
 
 Update database credentials inside:
 
@@ -260,11 +261,20 @@ Application URL:
 http://localhost:8081
 ```
 
-Admin Login:
+Admin Portal:
 
 ```text
-Email: admin@enterprise.com
-Password: ChangeMe1!
+http://localhost:8081/admin/login
+```
+
+---
+
+# API Documentation
+
+Swagger UI:
+
+```text
+http://localhost:8081/swagger-ui/index.html
 ```
 
 ---
@@ -272,28 +282,26 @@ Password: ChangeMe1!
 # Future Enhancements
 
 * Attendance Management
-* Payroll System
+* Payroll Management
 * Email Notifications
-* Employee Performance Reviews
+* Performance Reviews
+* Employee Self-Service Portal
 * Analytics Dashboard
 * AI-Powered HR Insights
-* Multi-Tenant Architecture
 * Cloud Deployment
 
 ---
 
-# Resume Project Summary
+# Resume Project Description
 
-Developed a full-stack Enterprise Employee Management Platform using Java 21, Spring Boot 3, Spring Security, JWT Authentication, Thymeleaf, MySQL, Flyway, and Role-Based Access Control (RBAC). Implemented employee lifecycle management, department administration, leave processing, task tracking, audit logging, REST APIs, and secure authentication following enterprise-grade architecture and security practices.
+Developed a full-stack Enterprise Employee Management Platform using Java 21, Spring Boot 3, Spring Security, JWT Authentication, Thymeleaf, MySQL, Flyway, and Role-Based Access Control (RBAC). Implemented employee lifecycle management, department administration, leave processing, task tracking, audit logging, secure REST APIs, and responsive administrative dashboards following enterprise-grade architecture and security practices.
 
 ---
 
 # Author
 
-Karan
-
+**Karan**
 B.Tech Electronics & Telecommunication Engineering
-
 2026 Graduate
 
 ---
