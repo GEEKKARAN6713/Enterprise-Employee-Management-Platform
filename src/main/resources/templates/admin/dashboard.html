@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{admin/layout :: head('Dashboard')}"></head>
+<body class="bg-dark text-light">
+<div th:replace="~{admin/layout :: nav}"></div>
+<main class="container-fluid px-4">
+    <h1 class="h3 mb-4">Dashboard</h1>
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="card card-dark h-100">
+                <div class="card-header">Recent Employees</div>
+                <div class="card-body p-0">
+                    <table class="table table-dark table-hover mb-0">
+                        <thead><tr><th>Name</th><th>Title</th><th>Dept</th></tr></thead>
+                        <tbody>
+                        <tr th:each="e : ${employees}">
+                            <td th:text="${e.firstName + ' ' + e.lastName}">Name</td>
+                            <td th:text="${e.jobTitle}">Title</td>
+                            <td th:text="${e.departmentName}">Dept</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card card-dark h-100">
+                <div class="card-header">Pending Leaves</div>
+                <div class="card-body p-0">
+                    <table class="table table-dark table-hover mb-0">
+                        <thead><tr><th>Employee</th><th>Status</th><th>Dates</th></tr></thead>
+                        <tbody>
+                        <tr th:each="l : ${leaves}">
+                            <td th:text="${l.employeeName}">Emp</td>
+                            <td><span class="badge bg-warning text-dark" th:text="${l.status}">PENDING</span></td>
+                            <td th:text="${l.startDate + ' → ' + l.endDate}">Dates</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card card-dark">
+                <div class="card-header">Departments</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-transparent text-light border-secondary"
+                        th:each="d : ${departments}" th:text="${d.name}">Dept</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card card-dark">
+                <div class="card-header">Recent Tasks</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-transparent text-light border-secondary d-flex justify-content-between"
+                        th:each="t : ${tasks}">
+                        <span th:text="${t.title}">Task</span>
+                        <span class="badge bg-info text-dark" th:text="${t.status}">TODO</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

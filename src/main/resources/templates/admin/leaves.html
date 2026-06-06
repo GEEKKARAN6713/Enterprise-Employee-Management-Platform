@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{admin/layout :: head('Leave Requests')}"></head>
+<body class="bg-dark text-light">
+<div th:replace="~{admin/layout :: nav}"></div>
+<main class="container-fluid px-4">
+    <h1 class="h3 mb-4">Leave Requests</h1>
+    <div class="card card-dark">
+        <table class="table table-dark table-hover mb-0">
+            <thead><tr><th>Employee</th><th>Period</th><th>Status</th><th>Reason</th></tr></thead>
+            <tbody>
+            <tr th:each="l : ${page.content}">
+                <td th:text="${l.employeeName}">Emp</td>
+                <td th:text="${l.startDate + ' → ' + l.endDate}">Dates</td>
+                <td><span class="badge bg-secondary" th:text="${l.status}">STATUS</span></td>
+                <td th:text="${l.reason}">Reason</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>

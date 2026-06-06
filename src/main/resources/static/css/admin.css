@@ -1,0 +1,42 @@
+:root {
+    --emp-bg: #0f1419;
+    --emp-card: #1a2332;
+    --emp-accent: #3b82f6;
+    --emp-border: #2d3a4f;
+}
+
+body.bg-dark {
+    background: var(--emp-bg) !important;
+}
+
+.card-dark {
+    background: var(--emp-card);
+    border: 1px solid var(--emp-border);
+    border-radius: 0.75rem;
+    color: #e2e8f0;
+}
+
+.card-dark .card-header {
+    background: rgba(59, 130, 246, 0.12);
+    border-bottom: 1px solid var(--emp-border);
+    font-weight: 600;
+}
+
+.navbar-dark {
+    background: var(--emp-card) !important;
+}
+
+.btn-primary {
+    background: var(--emp-accent);
+    border-color: var(--emp-accent);
+}
+
+.table-dark {
+    --bs-table-bg: transparent;
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+}

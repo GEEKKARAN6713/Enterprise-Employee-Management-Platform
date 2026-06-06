@@ -1,0 +1,12 @@
+package com.enterprise.empmgmt.repository;
+
+import com.enterprise.empmgmt.domain.entity.Role;
+import com.enterprise.empmgmt.domain.enums.RoleName;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface RoleRepository extends JpaRepository<Role, Long> {
+
+    Optional<Role> findByName(RoleName name);
+}

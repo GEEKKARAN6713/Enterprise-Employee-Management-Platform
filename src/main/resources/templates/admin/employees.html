@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{admin/layout :: head('Employees')}"></head>
+<body class="bg-dark text-light">
+<div th:replace="~{admin/layout :: nav}"></div>
+<main class="container-fluid px-4">
+    <h1 class="h3 mb-4">Employees</h1>
+    <div class="card card-dark">
+        <div class="table-responsive">
+            <table class="table table-dark table-hover mb-0">
+                <thead>
+                <tr>
+                    <th>Name</th><th>Email</th><th>Title</th><th>Department</th><th>Manager</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="e : ${page.content}">
+                    <td th:text="${e.firstName + ' ' + e.lastName}">Name</td>
+                    <td th:text="${e.email}">email</td>
+                    <td th:text="${e.jobTitle}">title</td>
+                    <td th:text="${e.departmentName}">dept</td>
+                    <td th:text="${e.managerName}">mgr</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+</body>
+</html>

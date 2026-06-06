@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{admin/layout :: head('Tasks')}"></head>
+<body class="bg-dark text-light">
+<div th:replace="~{admin/layout :: nav}"></div>
+<main class="container-fluid px-4">
+    <h1 class="h3 mb-4">Tasks</h1>
+    <div class="card card-dark">
+        <table class="table table-dark table-hover mb-0">
+            <thead><tr><th>Title</th><th>Assignee</th><th>Status</th><th>Due</th></tr></thead>
+            <tbody>
+            <tr th:each="t : ${page.content}">
+                <td th:text="${t.title}">Title</td>
+                <td th:text="${t.assigneeName}">Assignee</td>
+                <td th:text="${t.status}">Status</td>
+                <td th:text="${t.dueDate}">Due</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>
