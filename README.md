@@ -301,7 +301,7 @@ Developed a full-stack Enterprise Employee Management Platform using Java 21, Sp
 # Author
 
 **Karan**
-B.Tech Electronics & Telecommunication Engineering
+B.Tech Information Technology 
 2026 Graduate
 
 ---
